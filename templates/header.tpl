@@ -131,9 +131,9 @@
 							<li>
 								<a id="user-profile-link" href=""><i class="fa fa-circle status-offline"></i><span>[[global:header.profile]]</span></a>
 							</li>
-							<li id="logout-link">
+							<!--<li id="logout-link">
 								<a href="#">[[global:logout]]</a>
-							</li>
+							</li>-->
 							<li role="presentation" class="divider"></li>
 							<li>
 								<a href="#" class="user-status" data-status="online"><i class="fa fa-circle status online"></i><span> [[global:online]]</span></a>
