@@ -114,7 +114,7 @@
 						<a href="{relative_path}/notifications"><i class="fa fa-exclamation-triangle" title="[[notifications:title]]"></i> [[notifications:title]]</a>
 					</li>
 
-					<li class="chats dropdown text-center hidden-xs">
+<!-- 					<li class="chats dropdown text-center hidden-xs">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="chat_dropdown"><i class="fa fa-comment-o" title="[[global:header.chats]]"></i></a>
 						<ul id="chat-list" class="dropdown-menu" aria-labelledby="chat_dropdown">
 							<li>
@@ -122,7 +122,7 @@
 							</li>
 						</ul>
 					</li>
-
+ -->
 					<li id="user_label" class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="user_dropdown" title="[[global:header.profile]]">
 							<img src=""/>
