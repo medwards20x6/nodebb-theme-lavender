@@ -1,5 +1,5 @@
 $('document').ready(function() {
-	requirejs([
+	/*requirejs([
 		'/css/assets/vendor/masonry.js',
 		'/css/assets/vendor/imagesLoaded.js',
 	], function(Masonry, imagesLoaded) {
@@ -19,7 +19,7 @@ $('document').ready(function() {
 				}
 			}
 		});
-	});
+	});*/
 
 	(function() {
 		// loading animation

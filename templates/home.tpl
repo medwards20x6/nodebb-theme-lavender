@@ -1,5 +1,25 @@
 <div class="row home" itemscope itemtype="http://www.schema.org/ItemList">
-	<div class="col-lg-9 col-sm-12" no-widget-class="col-lg-12 col-sm-12">
+
+	<div widget-area="sidebar" class="col-lg-12">
+		<!-- BEGIN widgets -->
+		{widgets.html}
+		<!-- END widgets -->
+	</div>
+
+	<div class="col-lg-12" no-widget-class="col-lg-12 col-sm-12">
+
+		<!-- BEGIN categories -->
+		<div class="media">
+			<a class="pull-left" href="{categories.link}">
+				<i class="media-object fa {categories.icon} fa-4x"></i>
+			</a>
+			<div class="media-body">
+				<h4 class="media-heading"><a href="{categories.link}">{categories.name}</a></h4>
+				<div class="description" itemprop="description">{categories.description}</div>
+			</div>
+		</div>
+		<!-- END categories -->
+
 		<div class="row">
 			<!-- BEGIN categories -->
 			<div class="col-md-3 col-sm-6 col-xs-12 category-item">
@@ -53,11 +73,5 @@
 			</div>
 			<!-- END categories -->
 		</div>
-	</div>
-
-	<div widget-area="sidebar" class="col-lg-3 col-sm-12">
-		<!-- BEGIN widgets -->
-		{widgets.html}
-		<!-- END widgets -->
 	</div>
 </div>

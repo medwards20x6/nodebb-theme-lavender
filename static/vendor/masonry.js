@@ -1,5 +1,5 @@
 /*!
- * Masonry PACKAGED v3.1.3
+ * Masonry PACKAGED v3.1.3f
  * Cascading grid layout library
  * http://masonry.desandro.com
  * MIT License
@@ -298,7 +298,7 @@ if ( typeof define === 'function' && define.amd ) {
  */
 
 (function () {
-	
+
 
 	/**
 	 * Class for managing events.
@@ -1031,7 +1031,7 @@ if ( typeof define === 'function' && define.amd ) {
 
 ( function( global, ElemProto ) {
 
-  
+
 
   var matchesMethod = ( function() {
     // check un-prefixed
