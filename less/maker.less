@@ -16,6 +16,7 @@
 
 @opaque_white: rgba(255,255,255,0.90);
 @opaque_black: rgba(0,0,0,0.10);
+@super_opaque_black: rgba(0,0,0,0.05);
 
 @font_stack: "Helvetica","Arial",sans-serif;
 @font_default: "AktivGrotesk-Regular", @font_stack;
@@ -25,6 +26,7 @@
 body{
 	font-family: @font_default;
 }
+
 a,
 a:link,
 a:visited,
@@ -89,16 +91,51 @@ h6 small{
 .pagination>.active>span:focus{
 	color: @blue;
 }
+.pagination>.disabled>span,
+.pagination>.disabled>span:hover,
+.pagination>.disabled>span:focus,
+.pagination>.disabled>a,
+.pagination>.disabled>a:hover,
+.pagination>.disabled>a:focus{
+	border-color: @blue;
+}
+
 
 /* Post Lists */
 .home .col-md-3{
 	width: 25% !important;
 }
 .media{
+	padding: 0 !important;
 	background: @white;
 	border: 2px solid @opaque_black;
 	padding: 14px;
 	margin-top: 10px;
+
+
+	.media-object{
+	    line-height: 1.3em;
+		width: 65px;
+		margin: 14px;
+		text-align: center;
+		padding-top: 11px;
+	}
+
+	.pull-left{
+		background: @super_opaque_black;
+		color: rgba(0,0,0,0.30);
+	}
+
+	&:hover{
+		.pull-left{
+			color: rgba(0,0,0,0.50);
+		}
+	}
+
+	.media-body{
+		margin: 14px 0;
+	}
+
 	a{
 		text-decoration: none;
 	}
@@ -229,7 +266,11 @@ textarea{
 	.box-shadow(none);
 	border: 2px solid @opaque_black;
 }
-
+.category .profile-image,
+.topic .profile-image{
+	.border-radius(0px);
+	border-width: 2px;
+}
 
 /* Posts */
 .topic .posts>li .topic-title,
@@ -255,6 +296,8 @@ textarea{
 	background: rgba(255,255,0,0.2);
 }
 
+
+
 /* Responsive */
 // Desktop
 @media (min-width: 768px){
@@ -262,3 +305,5 @@ textarea{
 		margin-left: 0;
 	}
 }
+
+
