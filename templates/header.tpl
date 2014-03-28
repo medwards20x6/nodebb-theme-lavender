@@ -41,13 +41,14 @@
 		window.analytics.load("fnpijh4ijl");
 		window.analytics.page();
 
+		// NodeBB crap has loaded
 		$(window).on('action:connected', function(){
 			analytics.identify(app.uid, {
 				username: app.username
 			});
 		});
 
-
+		// We've navigated to a new page (or we've completely loaded a new one)
 		$(window).on('action:ajaxify.end', function(){
 			setTimeout(function(){
 
