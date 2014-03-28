@@ -10,68 +10,18 @@
 
 		<!-- BEGIN categories -->
 		<div class="media">
-			<a class="pull-left" href="{categories.link}">
-				<i class="media-object fa {categories.icon} fa-4x"></i>
+			<a class="pull-left" href="{relative_path}/category/{categories.slug}">
+				<i class="media-object sl sl-comments- {categories.icon} fa-4x"></i>
 			</a>
 			<div class="media-body">
-				<h4 class="media-heading"><a href="{categories.link}">{categories.name}</a></h4>
+				<h4 class="media-heading"><a href="{relative_path}/category/{categories.slug}">{categories.name}</a></h4>
 				<div class="description" itemprop="description">{categories.description}</div>
+				<div class="meta">
+					<span>{categories.topic_count} topics</span>
+				</div>
 			</div>
 		</div>
 		<!-- END categories -->
 
-		<div class="row">
-			<!-- BEGIN categories -->
-			<div class="col-md-3 col-sm-6 col-xs-12 category-item">
-				<meta itemprop="name" content="{categories.name}">
-
-				<div class="category-icon">
-
-					<!-- IF categories.link -->
-					<a style="color: {categories.color};" href="{categories.link}" itemprop="url" target="_blank">
-					<!-- ELSE -->
-					<a style="color: {categories.color};" href="{relative_path}/category/{categories.slug}" itemprop="url">
-					<!-- ENDIF categories.link -->
-						<div id="category-{categories.cid}" class="category-header category-header-image-{categories.imageClass}" style="background: {categories.background}; color: {categories.color};">
-							<!-- IF !categories.link -->
-							<span class="badge {categories.unread-class}">{categories.topic_count} </span>
-							<!-- ENDIF !categories.link -->
-
-							<div><i class="fa {categories.icon} fa-4x"></i></div>
-						</div>
-					</a>
-
-					<div class="category-box">
-						<!-- IF categories.link -->
-						<a href="{categories.link}" itemprop="url" target="_blank">
-						<!-- ELSE -->
-						<a href="category/{categories.slug}" itemprop="url">
-						<!-- ENDIF categories.link-->
-							<h4><i class="fa {categories.icon} visible-xs-inline"></i> {categories.name}</h4>
-						</a>
-						<div class="description" itemprop="description">{categories.description}</div>
-						<!-- IF !categories.link -->
-						<!-- BEGIN posts -->
-						<div class="post-preview clearfix">
-							<a style="color: {categories.color};" href="./user/{categories.posts.userslug}">
-								<img src="{categories.posts.picture}" title="{categories.posts.username}" class="pull-left user-img" />
-							</a>
-
-							<p>
-								<strong>{categories.posts.username}</strong><br/>
-								{categories.posts.content}
-							</p>
-							<span class="pull-right">
-								<a href="topic/{categories.posts.topicSlug}#{categories.posts.pid}">[[category:posted]]</a>
-								<span class="timeago" title="{categories.posts.relativeTime}"></span>
-							</span>
-						</div>
-						<!-- END posts -->
-						<!-- ENDIF !categories.link -->
-					</div>
-				</div>
-			</div>
-			<!-- END categories -->
-		</div>
 	</div>
 </div>
