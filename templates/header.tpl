@@ -35,6 +35,36 @@
 	<!-- IF useCustomCSS -->
 	<style type="text/css">{customCSS}</style>
 	<!-- ENDIF useCustomCSS -->
+
+	<script type="text/javascript">
+		window.analytics||(window.analytics=[]),window.analytics.methods=["identify","track","trackLink","trackForm","trackClick","trackSubmit","page","pageview","ab","alias","ready","group","on","once","off"],window.analytics.factory=function(t){return function(){var a=Array.prototype.slice.call(arguments);return a.unshift(t),window.analytics.push(a),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var method=window.analytics.methods[i];window.analytics[method]=window.analytics.factory(method)}window.analytics.load=function(t){var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n)},window.analytics.SNIPPET_VERSION="2.0.8",
+		window.analytics.load("fnpijh4ijl");
+		window.analytics.page();
+
+		$(window).on('action:connected', function(){
+			analytics.identify(app.uid, {
+				username: app.username
+			});
+		});
+
+
+		$(window).on('action:ajaxify.end', function(){
+			setTimeout(function(){
+
+				var currentPage = ajaxify.currentPage;
+				var data = {};
+
+				if(currentPage == "topic"){
+					data.topic = app.currentRoom;
+				}
+
+				// Capitalize the page we're on
+				var capitalized = (currentPage[0].toUpperCase() + currentPage.slice(1).toLowerCase());
+				analytics.track("Forums - "+ capitalized, data);
+
+			}, 10);
+		});
+	</script>
 </head>
 
 <body>
