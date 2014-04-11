@@ -11,7 +11,13 @@
 		<!-- BEGIN categories -->
 		<div class="media">
 			<a class="pull-left" href="{relative_path}/category/{categories.slug}">
+				<!-- IF categories.customIcon -->
+				<img class="media-object" src="//s3.amazonaws.com/assets.makerstudios.com/max/forums/icons/{categories.customIcon}.png">
+				<!-- ENDIF categories.customIcon -->
+
+				<!-- IF !categories.icon -->
 				<i class="media-object sl sl-{categories.icon} fa-3x"></i>
+				<!-- ENDIF !categories.icon -->
 			</a>
 			<div class="media-body">
 				<h4 class="media-heading"><a href="{relative_path}/category/{categories.slug}">{categories.name}</a></h4>
