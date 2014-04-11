@@ -22,7 +22,15 @@
 			<div class="media-body">
 				<h4 class="media-heading"><a href="{relative_path}/category/{categories.slug}">{categories.name}</a></h4>
 				<div class="meta">
-					<span>{categories.topic_count} topics</span>
+					<span>{categories.topic_count_formatted}</span>
+					<!-- IF categories.last_post.timestamp -->
+					<span class="pipe">|</span>
+					<span>latest post {categories.last_post.timestamp}</span>
+					<!-- ENDIF categories.last_post.timestamp -->
+					<!-- IF categories.last_post.username -->
+					<span class="pipe">|</span>
+					<span>by {categories.last_post.username}</span>
+					<!-- ENDIF categories.last_post.username -->
 				</div>
 			</div>
 		</div>

@@ -59,6 +59,10 @@
 					data.topic = app.currentRoom;
 				}
 
+				if(currentPage == "category"){
+					data.category = app.currentRoom;
+				}
+				
 				// Capitalize the page we're on
 				var capitalized = (currentPage[0].toUpperCase() + currentPage.slice(1).toLowerCase());
 				analytics.track("Forums - "+ capitalized, data);
