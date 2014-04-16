@@ -73,6 +73,7 @@
 									<!-- ENDIF posts.editor -->
 								</small>
 
+								<!-- IF privileges.write -->
 								<div class="dropdown share-dropdown">
 									<a href="#" class="dropdown-toggle postMenu favourite-tooltip" id="postMenu_{posts.pid}" data-toggle="dropdown">
 										<i class="fa fa-heart"></i>
@@ -118,6 +119,7 @@
 								<a href="#" class="downvote <!-- IF posts.downvoted --> downvoted btn-primary <!-- ENDIF posts.downvoted -->">
 									<i class="fa fa-minus"></i>
 								</a>
+								<!-- ENDIF privileges.write -->
 
 								<!-- BEGIN custom_profile_info -->
 								&bull; {posts.custom_profile_info.content}
@@ -125,9 +127,11 @@
 
 								<span class="post-tools">
 									<!-- <button class="btn btn-sm btn-link chat" type="button" title="[[topic:chat]]"><i class="fa fa-comment"></i><span class="hidden-xs-inline"> [[topic:chat]]</span></button> -->
+									<!-- IF privileges.write -->
 									<button class="btn btn-sm btn-link quote" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i><span class="hidden-xs-inline"> [[topic:quote]]</span></button>
 									<button class="btn btn-sm btn-link post_reply" type="button"><i class="fa fa-reply"></i><span class="hidden-xs-inline"> [[topic:reply]]</span></button>
 									<button class="btn btn-sm btn-link flag" type="button" title="[[topic:flag_title]]"><i class="fa fa-flag-o"></i><span class="hidden-xs-inline"> [[topic:flag]]</span></button>
+									<!-- ENDIF privileges.write -->
 									<!-- IF posts.display_moderator_tools -->
 										<button class="btn btn-sm btn-link edit" type="button" title="[[topic:edit]]"><i class="fa fa-pencil"></i><span class="hidden-xs-inline"> [[topic:edit]]</span></button>
 										<button class="btn btn-sm btn-link delete" type="button" title="[[topic:delete]]"><i class="fa fa-trash-o"></i><span class="hidden-xs-inline"> [[topic:delete]]</span></button>
@@ -155,7 +159,9 @@
 					<div class="thread_active_users active-users inline-block"></div>
 				</div>
 				<div class="topic-main-buttons pull-right inline-block">
+					<!-- IF privileges.write -->
 					<button class="btn btn-primary post_reply" type="button">[[topic:reply]]</button>
+					<!-- ENDIF privileges.write -->
 					<div class="btn-group thread-tools hide">
 						<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">[[topic:thread_tools.title]] <span class="caret"></span></button>
 						<ul class="dropdown-menu pull-right">
@@ -186,7 +192,9 @@
 			<div class="loading-indicator" done="0" style="display:none;">
 				<span class="hidden-xs-inline">[[topic:loading_more_posts]]</span> <i class="fa fa-refresh fa-spin"></i>
 			</div>
+			<!-- IF privileges.write -->
 			<button class="btn btn-primary post_reply" type="button">[[topic:reply]]</button>
+			<!-- ENDIF privileges.write -->
 			<div class="btn-group thread-tools hide dropup">
 				<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">[[topic:thread_tools.title]] <span class="caret"></span></button>
 				<ul class="dropdown-menu pull-right">
