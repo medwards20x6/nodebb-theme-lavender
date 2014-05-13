@@ -63,6 +63,8 @@
 					data.category = app.currentRoom;
 				}
 
+				data.title = $('meta[name="title"]').attr('content');
+
 				// Capitalize the page we're on
 				var capitalized = (currentPage[0].toUpperCase() + currentPage.slice(1).toLowerCase());
 				analytics.track("Forums - "+ capitalized, data);
